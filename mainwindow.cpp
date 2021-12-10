@@ -85,9 +85,9 @@ void MainWindow::on_connecter_clicked()
     if (status != MI_OK){
         printf("Load Key [FAILED]\n");
     }
-    BYTE atq[2];
-    BYTE sak[1];
-    BYTE uid[12];
+    BYTE atq[2]; //à remplacer par unsigned char si BYTE n'est pas pris en compte
+    BYTE sak[1]; //à remplacer par unsigned char si BYTE n'est pas pris en compte
+    BYTE uid[12]; //à remplacer par unsigned char si BYTE n'est pas pris en compte
     uint16_t uid_len = 12;
     RF_Power_Control(&MonLecteur, TRUE, 0);
     int status2 = ISO14443_3_A_PollCard(&MonLecteur, atq, sak, uid, &uid_len);
@@ -287,9 +287,9 @@ void MainWindow::showStatus()
         }
         // Si les cles peuvent être chargees alors on reassocie la carte au lecteur dans le but de la lire
         if(status == 0) {
-                BYTE atq[2];
-                BYTE sak[1];
-                BYTE uid[12];
+                BYTE atq[2]; //à remplacer par unsigned char si BYTE n'est pas pris en compte
+                BYTE sak[1]; //à remplacer par unsigned char si BYTE n'est pas pris en compte
+                BYTE uid[12]; //à remplacer par unsigned char si BYTE n'est pas pris en compte
                 uint16_t uid_len = 12;
                 RF_Power_Control(&MonLecteur, TRUE, 0);
                 int status2 = ISO14443_3_A_PollCard(&MonLecteur, atq, sak, uid, &uid_len);
